@@ -1,0 +1,215 @@
+.main-block {
+	padding-top: 100px;
+	&__heading {
+		position: relative;
+		display: block;
+		margin-bottom: 120px;
+	}
+	&__author-block {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__author-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+	&__author-name {
+		display: block;
+		font-size: 45px;
+		line-height: 1.2;
+		font-weight: 900;	
+		margin-bottom: 30px;
+	}
+	&__author-description {
+		position: relative;
+		display: block;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.4;
+		b {
+			display: block;
+			margin-bottom: 20px;
+		}
+		a {
+			outline: 0;
+			display: inline-block;
+			transition: all 0.2s ease-in-out;
+		}
+		a:hover {
+			color: blue;
+			text-decoration: none;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: auto;
+			right: auto;
+			left: 120px;
+			bottom: -100px;
+			width: 100px;
+			height: 130px;
+			background-image: url('../img/emoji-allright.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	}
+	&__author-photo {
+		display: block;
+		width: 250px;
+		height: 250px;
+		border-radius: 50%;
+		border: 15px solid #000;
+		background-color: #0c2a4d;
+		overflow: hidden;
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-bottom: 60px;
+	}
+	&__card-block {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 360px;
+		height: 360px;
+		margin-bottom: 30px;
+		border-radius: 35px;
+		padding: 20px;
+		background-color: #0c2a4d;
+		background-position: center center;
+		background-repeat: no-repeat;
+		box-shadow: 0 5px 20px rgba(0,0,0,.4);
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+		&.first {
+			background-image: url('../img/cinarta_1.png');
+			background-size: 200px 200px;
+		}
+		&.second {
+			background-image: url('../img/topline.png');
+			background-size: 200px 200px;
+		}
+		&.third {
+			background-image: url('../img/feminamed_1.png');
+			background-size: 200px 200px;
+		}
+		&.fourth {
+			background-image: url('../img/avangard.png');
+			background-size: 200px 200px;
+		}
+		&.fifth {
+			background-image: url('../img/megafon.svg');
+			background-size: 315px 62px;
+		}
+		&.sixth {
+			background-image: url('../img/logo_mojayskaya.png');
+			background-size: 315px 62px;
+			z-index: 10;
+		}
+		&.seventh {
+			background-image: url('../img/surfer.png');
+			background-size: 200px 200px;
+		}
+		&.eighth {
+			background-image: url('../img/logo-colease.svg');
+			background-size: 285px 66px;
+		}
+		&.ninth {
+			background-image: url('../img/logo-forsa.png');
+			background-size: 200px 200px;
+		}
+		&.tenth {
+			background-image: url('../img/upskill-bg.svg');
+		}
+	}
+	&__card-name {
+		display: block;
+		text-align: center;
+		margin-bottom: 120px;
+		font-size: 36px;
+		line-height: 1.2;
+		color: #fff;
+		font-weight: 900;
+		img.icon--upskill {
+			width: 16px;
+			height: 18px;
+			margin-left: 15px;
+		}
+	}
+	&__comments-title {
+		display: block;
+		font-size: 36px;
+		line-height: 1.2;
+		font-weight: 600;
+	}
+}
+
+@include for-size(mobile) {
+	.main-block {
+		padding-top: 40px;
+		&__list {
+			display: block;
+		}
+		&__author-block {
+			display: flex;
+			flex-direction: column;
+		}
+		&__author-wrapper {
+			order: 2;
+		}
+		&__author-name {
+			font-size: 26px;
+			text-align: center;
+		}
+		&__author-photo {
+			display: flex;
+			justify-content: center;
+			order: 1;
+			margin-bottom: 45px;
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+		&__card-block {
+			width: 100%;
+			&.eighth {
+    		background-size: 250px 60px;
+			}
+		}
+	}
+}
+@include for-size(tablet) {
+	.main-block {
+		&__card-block {
+			width: 46%;
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+			&:not(:nth-child(2n)) {
+				margin-right: 20px;
+			}
+		}
+		&__author-name {
+			font-size: 35px;
+		}
+		&__author-photo {
+			flex-shrink: 0;
+		}
+		&__author-description {
+			font-size: 14px;
+		}
+	}
+}
